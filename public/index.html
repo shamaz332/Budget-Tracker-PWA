@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
- 
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="apple-touch-icon" sizes="120x120" href="./icon/icon1.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./icon/icon2.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./icon/icon3.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="./icon/icon4.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./icon/icon5.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="./icon/icon6.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="./icon/icon7.png">
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
 
-    <!-- PWA APP  -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('worker.js').then(function(registration) {
-            console.log('Worker registration successful', registration.scope);
-          }, function(err) {
-            console.log('Worker registration failed', err);
-          }).catch(function(err) {
-            console.log(err);
-          });
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" sizes="120x120" href="./icon/icon1.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./icon/icon2.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./icon/icon3.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="./icon/icon4.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icon/icon5.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="./icon/icon6.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="./icon/icon7.png">
+  <title>React App</title>
+
+</head>
+
+<body>
+  <button class="add-button" style="  position: absolute;
+  top: 1px;
+  left: 1px;">Add to home screen</button>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <!-- PWA APP  -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('worker.js').then(function (registration) {
+          console.log('Worker registration successful', registration.scope);
+        }, function (err) {
+          console.log('Worker registration failed', err);
+        }).catch(function (err) {
+          console.log(err);
         });
-      } else {
-        console.log('Service Worker is not supported by browser.');
-      }
-    </script>
-  </body>
+      });
+    } else {
+      console.log('Service Worker is not supported by browser.');
+    }
+  </script>
+</body>
+
 </html>
